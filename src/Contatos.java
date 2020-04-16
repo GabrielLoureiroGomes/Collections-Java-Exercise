@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class Contatos {
@@ -15,7 +14,6 @@ public class Contatos {
         Pessoa pessoa8 = new Pessoa();
         Pessoa pessoa9 = new Pessoa();
         Pessoa pessoa10 = new Pessoa();
-        List<Pessoa> contatos = new ArrayList();
 
         pessoa1.setContato("Barbara Napoleao", "barbara.napoleao@ambev.com.br", 'F', "Vendedor");
         pessoa2.setContato("Antonio Carlos", "antonio.carlos@outlook.com", 'M', "Cliente");
@@ -40,9 +38,9 @@ public class Contatos {
                 pessoa9,
                 pessoa10);
 
-        contatos.addAll(pessoas);
+        List<Pessoa> contatos = new ArrayList(pessoas);
 
-        Collections.sort(contatos, (p1, p2) -> p1.getNome()
+        contatos.sort((p1, p2) -> p1.getNome()
                 .compareToIgnoreCase(p2.getNome()));
 
         System.out.println("Contatos do sexo feminino do grupo Cliente: ");
